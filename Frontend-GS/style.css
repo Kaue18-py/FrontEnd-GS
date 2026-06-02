@@ -1,3 +1,7 @@
+/* =====================================================
+   SentinelX — style_final.css  (HTML/CSS puro, sem JS)
+   ===================================================== */
+
 :root {
   --bg:#050507; --bg2:#090a0e; --surface:#0e0f14; --surface2:#141519;
   --accent:#e8c97a; --accent2:#c9a84c; --text:#f0f0f0; --muted:#7a7a8a;
@@ -22,7 +26,7 @@ body {
   transition:background .5s, color .5s;
 }
 
-
+/* ── NAV ── */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:100;
   display:flex; align-items:center; justify-content:space-between;
@@ -43,7 +47,9 @@ nav {
 }
 .nav-links a:hover { color:var(--text); }
 
+/* Botões de tema — removidos */
 
+/* ── SEÇÕES GERAIS ── */
 #hero {
   position:relative; min-height:100vh;
   display:flex; flex-direction:column;
@@ -127,7 +133,7 @@ nav {
   to   { opacity:1; transform:translateY(0); }
 }
 
-
+/* ── SEÇÕES GERAIS ── */
 section { position:relative; padding:100px 6%; z-index:1; }
 .section-label {
   font-family:'Space Mono',monospace; font-size:.62rem; letter-spacing:5px;
@@ -151,7 +157,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
   background:linear-gradient(90deg,transparent,rgba(240,240,240,0.07),transparent);
 }
 
-
+/* ── PROBLEMA ── */
 #problema { background:var(--bg2); }
 .problema-layout {
   display:grid; grid-template-columns:1fr 1fr;
@@ -174,6 +180,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
 }
 .stat-desc { font-size:.82rem; color:var(--muted); margin-top:.45rem; line-height:1.5; }
 
+/* ── TECNOLOGIA ── */
 #tecnologia { background:var(--bg); }
 .tech-grid {
   display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -194,7 +201,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
 }
 .tech-desc { font-size:.84rem; color:var(--muted); line-height:1.65; }
 
-
+/* ── OBJETIVOS ── */
 #objetivos { background:var(--bg2); }
 .obj-layout {
   display:grid; grid-template-columns:1fr 1.5fr;
@@ -235,7 +242,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
 }
 .publico-desc { font-size:.84rem; color:var(--muted); line-height:1.6; }
 
-
+/* ── BENEFÍCIOS ── */
 #beneficios { background:var(--bg2); }
 .benef-grid {
   display:grid; grid-template-columns:repeat(3,1fr);
@@ -251,6 +258,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
 .benef-title { font-weight:700; font-size:.92rem; color:var(--text); margin-bottom:.28rem; }
 .benef-text { font-size:.83rem; color:var(--muted); line-height:1.6; }
 
+/* ── APLICAÇÃO ── */
 #aplicacao { background:var(--bg); }
 .aplicacao-inner { max-width:1100px; margin:0 auto; }
 .aplicacao-header { margin-bottom:3.5rem; }
@@ -311,7 +319,9 @@ section { position:relative; padding:100px 6%; z-index:1; }
   padding:2px 8px; border-radius:2px;
 }
 
-
+/* ══════════════════════════════════════════════════
+   ── GALERIA — IMAGENS COM ROTAÇÃO CSS PURO ──
+   ══════════════════════════════════════════════════ */
 #galeria { background:var(--bg2); }
 
 .galeria-grid {
@@ -329,7 +339,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
   gap:1.4rem;
 }
 
-/* Anel decorativo que gira */
+/* Wrapper externo: só segura os anéis giratórios */
 .galeria-orbit {
   position:relative;
   width:220px;
@@ -337,7 +347,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
   flex-shrink:0;
 }
 
-
+/* Anel externo girando */
 .galeria-orbit::before {
   content:'';
   position:absolute;
@@ -347,9 +357,10 @@ section { position:relative; padding:100px 6%; z-index:1; }
   border-top-color:var(--accent);
   border-right-color:rgba(232,201,122,0.3);
   animation:orbitSpin 8s linear infinite;
+  pointer-events:none;
 }
 
-
+/* Anel interno girando no sentido oposto */
 .galeria-orbit::after {
   content:'';
   position:absolute;
@@ -357,13 +368,12 @@ section { position:relative; padding:100px 6%; z-index:1; }
   border-radius:50%;
   border:1px dashed rgba(232,201,122,0.15);
   animation:orbitSpin 14s linear infinite reverse;
+  pointer-events:none;
 }
 
-
+/* Variação: sentido reverso para o card do meio */
 .galeria-orbit--rev::before {
   animation-direction:reverse;
-  border-top-color:var(--accent);
-  border-right-color:rgba(232,201,122,0.2);
   animation-duration:10s;
 }
 .galeria-orbit--rev::after {
@@ -371,26 +381,33 @@ section { position:relative; padding:100px 6%; z-index:1; }
   animation-duration:18s;
 }
 
-
-.galeria-img {
+/* Clip interno: garante que a imagem NÃO vaze do círculo */
+.galeria-clip {
   width:220px;
   height:220px;
   border-radius:50%;
-  object-fit:cover;
-  display:block;
+  overflow:hidden;          /* <- corta a imagem no círculo */
   border:2px solid rgba(232,201,122,0.25);
   box-shadow:
     0 0 0 1px rgba(232,201,122,0.08),
-    0 0 40px rgba(0,0,0,0.7),
-    inset 0 0 30px rgba(0,0,0,0.4);
+    0 0 40px rgba(0,0,0,0.7);
   transition:box-shadow .4s, transform .4s;
+  position:relative;
+  z-index:1;
 }
 
-.galeria-item:hover .galeria-img {
+/* A imagem preenche o clip */
+.galeria-img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.galeria-item:hover .galeria-clip {
   box-shadow:
-    0 0 0 2px rgba(232,201,122,0.4),
-    0 0 60px rgba(232,201,122,0.15),
-    inset 0 0 30px rgba(0,0,0,0.3);
+    0 0 0 2px rgba(232,201,122,0.45),
+    0 0 55px rgba(232,201,122,0.18);
   transform:scale(1.04);
 }
 
@@ -404,6 +421,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
   to   { transform:rotate(360deg); }
 }
 
+/* Texto abaixo de cada imagem */
 .galeria-label {
   text-align:center;
   max-width:240px;
@@ -417,7 +435,7 @@ section { position:relative; padding:100px 6%; z-index:1; }
   font-size:.82rem; color:var(--muted); line-height:1.6;
 }
 
-
+/* ── RODAPÉ ── */
 footer {
   background:#020204; border-top:1px solid var(--border);
   padding:60px 6% 38px; position:relative; z-index:1;
@@ -454,6 +472,7 @@ footer {
   color:var(--accent); letter-spacing:3px; opacity:.5;
 }
 
+/* ── RESPONSIVO ── */
 @media(max-width:900px) {
   .galeria-grid { grid-template-columns:1fr; gap:3.5rem; }
   .galeria-item { flex-direction:row; align-items:center; text-align:left; gap:2rem; }
