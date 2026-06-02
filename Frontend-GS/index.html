@@ -6,14 +6,11 @@
   <title>SentinelX · OverSpace — Traje Espacial Inteligente</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
- 
-  <style>#stars-canvas{display:none;} .reveal{opacity:1;transform:none;transition:none;}</style>
+  <link rel="stylesheet" href="style_final.css"/>
 </head>
 <body class="theme-dark">
 
-
-
+<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">OVER<span>SPACE</span></a>
   <ul class="nav-links">
@@ -23,15 +20,16 @@
     <li><a href="#publico">Público</a></li>
     <li><a href="#beneficios">Benefícios</a></li>
     <li><a href="#aplicacao">Aplicação</a></li>
+    <li><a href="#galeria">Galeria</a></li>
   </ul>
   <div class="theme-btns">
-    <button class="theme-btn active" data-theme="theme-dark"   title="Dark"></button>
-    <button class="theme-btn"        data-theme="theme-nebula" title="Nebula"></button>
-    <button class="theme-btn"        data-theme="theme-mars"   title="Mars"></button>
+    <a href="?tema=dark"   class="theme-btn theme-btn--dark   active" title="Dark"></a>
+    <a href="?tema=nebula" class="theme-btn theme-btn--nebula"        title="Nebula"></a>
+    <a href="?tema=mars"   class="theme-btn theme-btn--mars"          title="Mars"></a>
   </div>
 </nav>
 
-
+<!-- HERO -->
 <section id="hero">
   <span class="hero-badge">FIAP Global Solution 2026</span>
   <h1 class="hero-title">
@@ -48,15 +46,15 @@
 
 <span class="sep"></span>
 
-
+<!-- S1 PROBLEMA -->
 <section id="problema">
   <div class="problema-layout">
-    <div class="reveal">
+    <div>
       <p class="section-label">01 — Problema</p>
       <h2 class="section-title">O espaço é<br/>implacável</h2>
       <p class="section-body">Astronautas enfrentam ambientes extremos sem qualquer sistema inteligente capaz de monitorar saúde e entorno em tempo real. Uma falha não detectada a tempo pode ser fatal. A ausência de informação precisa e imediata é o maior inimigo da sobrevivência humana no espaço.</p>
     </div>
-    <div class="stat-grid reveal">
+    <div class="stat-grid">
       <div class="stat-card"><div class="stat-number">0,3s</div><div class="stat-desc">Tempo crítico para reagir a mudanças de pressão no traje</div></div>
       <div class="stat-card"><div class="stat-number">−270°C</div><div class="stat-desc">Temperatura mínima no espaço aberto sem proteção</div></div>
       <div class="stat-card"><div class="stat-number">8+</div><div class="stat-desc">Sinais vitais que precisam de monitoramento simultâneo</div></div>
@@ -67,116 +65,119 @@
 
 <span class="sep"></span>
 
+<!-- S2 TECNOLOGIA -->
 <section id="tecnologia">
   <div style="max-width:1100px;margin:0 auto;">
-    <div class="reveal">
+    <div>
       <p class="section-label">02 — Tecnologia</p>
       <h2 class="section-title">O que faz o<br/>OverSpace funcionar</h2>
       <p class="section-body">Um conjunto de tecnologias de ponta trabalhando em sinergia dentro do OverSpace, potencializadas pela inteligência da Spacie.</p>
     </div>
     <div class="tech-grid">
-      <div class="tech-card reveal"><span class="tech-icon">🤖</span><div class="tech-name">Inteligência Artificial</div><div class="tech-desc">Spacie analisa dados biométricos e ambientais de forma preditiva, antecipando riscos antes que aconteçam.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">👁️</span><div class="tech-name">Visão Computacional</div><div class="tech-desc">Câmeras em múltiplos ângulos identificam terrenos perigosos, objetos e condições adversas.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">📡</span><div class="tech-name">IoT & Sensores</div><div class="tech-desc">Rede de sensores biométricos monitoram FC, pressão, temperatura, O₂ e fadiga em tempo real.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">🥽</span><div class="tech-name">Realidade Aumentada</div><div class="tech-desc">HUD no visor do capacete exibe painel completo de sobrevivência com alertas e mapa do ambiente.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">🧠</span><div class="tech-name">Machine Learning</div><div class="tech-desc">A Spacie aprende os padrões do astronauta e aprimora sua precisão ao longo das missões.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">🌡️</span><div class="tech-name">Sistema Térmico</div><div class="tech-desc">Microcamadas inteligentes regulam a temperatura corporal automaticamente em ambientes extremos.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">📶</span><div class="tech-name">Redes Sem Fio</div><div class="tech-desc">Comunicação com nave, drones, robôs e base de controle com priorização inteligente de emergências.</div></div>
-      <div class="tech-card reveal"><span class="tech-icon">⚙️</span><div class="tech-name">Sistemas Embarcados</div><div class="tech-desc">Processamento local de alta performance, garantindo respostas em milissegundos mesmo sem conexão.</div></div>
+      <div class="tech-card"><span class="tech-icon">🤖</span><div class="tech-name">Inteligência Artificial</div><div class="tech-desc">Spacie analisa dados biométricos e ambientais de forma preditiva, antecipando riscos antes que aconteçam.</div></div>
+      <div class="tech-card"><span class="tech-icon">👁️</span><div class="tech-name">Visão Computacional</div><div class="tech-desc">Câmeras em múltiplos ângulos identificam terrenos perigosos, objetos e condições adversas.</div></div>
+      <div class="tech-card"><span class="tech-icon">📡</span><div class="tech-name">IoT & Sensores</div><div class="tech-desc">Rede de sensores biométricos monitoram FC, pressão, temperatura, O₂ e fadiga em tempo real.</div></div>
+      <div class="tech-card"><span class="tech-icon">🥽</span><div class="tech-name">Realidade Aumentada</div><div class="tech-desc">HUD no visor do capacete exibe painel completo de sobrevivência com alertas e mapa do ambiente.</div></div>
+      <div class="tech-card"><span class="tech-icon">🧠</span><div class="tech-name">Machine Learning</div><div class="tech-desc">A Spacie aprende os padrões do astronauta e aprimora sua precisão ao longo das missões.</div></div>
+      <div class="tech-card"><span class="tech-icon">🌡️</span><div class="tech-name">Sistema Térmico</div><div class="tech-desc">Microcamadas inteligentes regulam a temperatura corporal automaticamente em ambientes extremos.</div></div>
+      <div class="tech-card"><span class="tech-icon">📶</span><div class="tech-name">Redes Sem Fio</div><div class="tech-desc">Comunicação com nave, drones, robôs e base de controle com priorização inteligente de emergências.</div></div>
+      <div class="tech-card"><span class="tech-icon">⚙️</span><div class="tech-name">Sistemas Embarcados</div><div class="tech-desc">Processamento local de alta performance, garantindo respostas em milissegundos mesmo sem conexão.</div></div>
     </div>
   </div>
 </section>
 
 <span class="sep"></span>
 
-
+<!-- S3 OBJETIVOS -->
 <section id="objetivos">
   <div class="obj-layout">
-    <div class="reveal">
+    <div>
       <p class="section-label">03 — Objetivos</p>
       <h2 class="section-title">O que o<br/>OverSpace<br/>quer alcançar</h2>
       <p class="section-body">Cada objetivo foi definido com base nas principais vulnerabilidades identificadas nas missões espaciais tripuladas.</p>
     </div>
     <ul class="obj-list">
-      <li class="obj-item reveal"><span class="obj-num">01</span><span class="obj-text">Monitorar continuamente os sinais vitais do astronauta e emitir alertas preventivos antes que riscos se tornem emergências.</span></li>
-      <li class="obj-item reveal"><span class="obj-num">02</span><span class="obj-text">Interpretar o ambiente com visão computacional e fornecer informações precisas sobre terreno e condições ao redor.</span></li>
-      <li class="obj-item reveal"><span class="obj-num">03</span><span class="obj-text">Garantir que a Spacie atue como suporte — nunca como controle — respeitando a autonomia e privacidade do astronauta.</span></li>
-      <li class="obj-item reveal"><span class="obj-num">04</span><span class="obj-text">Ativar protocolos de emergência automaticamente apenas em situações extremas, dentro das permissões definidas pelo usuário.</span></li>
-      <li class="obj-item reveal"><span class="obj-num">05</span><span class="obj-text">Tornar o OverSpace referência em segurança para missões espaciais tripuladas de longa duração.</span></li>
+      <li class="obj-item"><span class="obj-num">01</span><span class="obj-text">Monitorar continuamente os sinais vitais do astronauta e emitir alertas preventivos antes que riscos se tornem emergências.</span></li>
+      <li class="obj-item"><span class="obj-num">02</span><span class="obj-text">Interpretar o ambiente com visão computacional e fornecer informações precisas sobre terreno e condições ao redor.</span></li>
+      <li class="obj-item"><span class="obj-num">03</span><span class="obj-text">Garantir que a Spacie atue como suporte — nunca como controle — respeitando a autonomia e privacidade do astronauta.</span></li>
+      <li class="obj-item"><span class="obj-num">04</span><span class="obj-text">Ativar protocolos de emergência automaticamente apenas em situações extremas, dentro das permissões definidas pelo usuário.</span></li>
+      <li class="obj-item"><span class="obj-num">05</span><span class="obj-text">Tornar o OverSpace referência em segurança para missões espaciais tripuladas de longa duração.</span></li>
     </ul>
   </div>
 </section>
 
 <span class="sep"></span>
 
+<!-- S4 PÚBLICO -->
 <section id="publico">
   <div style="max-width:1100px;margin:0 auto;">
-    <div class="reveal">
+    <div>
       <p class="section-label">04 — Público-alvo</p>
       <h2 class="section-title">Quem o OverSpace<br/>protege</h2>
       <p class="section-body">Desenvolvido para o espaço, mas com aplicação em qualquer ambiente onde a vida humana enfrenta riscos extremos.</p>
     </div>
     <div class="publico-cards">
-      <div class="publico-card reveal"><span class="publico-emoji">🧑‍🚀</span><div class="publico-title">Astronautas</div><div class="publico-desc">Profissionais em missões na Lua, Marte ou espaço aberto que precisam de suporte inteligente constante.</div></div>
-      <div class="publico-card reveal"><span class="publico-emoji">🚒</span><div class="publico-title">Bombeiros</div><div class="publico-desc">Equipes em incêndios que precisam de detecção de gases, localização e monitoramento vital em tempo real.</div></div>
-      <div class="publico-card reveal"><span class="publico-emoji">⛏️</span><div class="publico-title">Mineradores</div><div class="publico-desc">Trabalhadores expostos a gases tóxicos, desmoronamentos e falta de oxigênio em minas.</div></div>
-      <div class="publico-card reveal"><span class="publico-emoji">🪖</span><div class="publico-title">Exército & Resgate</div><div class="publico-desc">Equipes militares e de resgate em operações de alto risco.</div></div>
-      <div class="publico-card reveal"><span class="publico-emoji">🏢</span><div class="publico-title">Agências Espaciais</div><div class="publico-desc">NASA, ESA e outras agências que buscam aumentar a segurança das missões tripuladas.</div></div>
+      <div class="publico-card"><span class="publico-emoji">🧑‍🚀</span><div class="publico-title">Astronautas</div><div class="publico-desc">Profissionais em missões na Lua, Marte ou espaço aberto que precisam de suporte inteligente constante.</div></div>
+      <div class="publico-card"><span class="publico-emoji">🚒</span><div class="publico-title">Bombeiros</div><div class="publico-desc">Equipes em incêndios que precisam de detecção de gases, localização e monitoramento vital em tempo real.</div></div>
+      <div class="publico-card"><span class="publico-emoji">⛏️</span><div class="publico-title">Mineradores</div><div class="publico-desc">Trabalhadores expostos a gases tóxicos, desmoronamentos e falta de oxigênio em minas.</div></div>
+      <div class="publico-card"><span class="publico-emoji">🪖</span><div class="publico-title">Exército & Resgate</div><div class="publico-desc">Equipes militares e de resgate em operações de alto risco.</div></div>
+      <div class="publico-card"><span class="publico-emoji">🏢</span><div class="publico-title">Agências Espaciais</div><div class="publico-desc">NASA, ESA e outras agências que buscam aumentar a segurança das missões tripuladas.</div></div>
     </div>
   </div>
 </section>
 
 <span class="sep"></span>
 
+<!-- S5 BENEFÍCIOS -->
 <section id="beneficios">
   <div style="max-width:1100px;margin:0 auto;">
-    <div class="reveal">
+    <div>
       <p class="section-label">05 — Benefícios</p>
       <h2 class="section-title">Por que o OverSpace<br/>muda tudo</h2>
       <p class="section-body">Spacie, sensores avançados e interface intuitiva criam um nível de proteção nunca antes alcançado.</p>
     </div>
     <div class="benef-grid">
-      <div class="benef-item reveal"><span class="benef-icon">⚡</span><div><div class="benef-title">Alertas em tempo real</div><div class="benef-text">Riscos identificados e comunicados em milissegundos, antes de se tornarem emergências.</div></div></div>
-      <div class="benef-item reveal"><span class="benef-icon">🔒</span><div><div class="benef-title">Spacie ética e controlada</div><div class="benef-text">O astronauta define todas as permissões. A Spacie atua como suporte, nunca como controle absoluto.</div></div></div>
-      <div class="benef-item reveal"><span class="benef-icon">🧬</span><div><div class="benef-title">Monitoramento completo</div><div class="benef-text">8+ sinais vitais monitorados simultaneamente com análise preditiva integrada.</div></div></div>
-      <div class="benef-item reveal"><span class="benef-icon">🌍</span><div><div class="benef-title">Aplicação versátil</div><div class="benef-text">Uma mesma tecnologia que protege tanto no espaço quanto em ambientes de risco na Terra.</div></div></div>
-      <div class="benef-item reveal"><span class="benef-icon">📊</span><div><div class="benef-title">Relatórios automáticos</div><div class="benef-text">Após cada missão, relatório completo de dados biométricos e alertas enviado à base.</div></div></div>
-      <div class="benef-item reveal"><span class="benef-icon">🆘</span><div><div class="benef-title">Emergência autônoma</div><div class="benef-text">Se não houver resposta a alertas, a Spacie aciona SOS, GPS e notificação à base automaticamente.</div></div></div>
+      <div class="benef-item"><span class="benef-icon">⚡</span><div><div class="benef-title">Alertas em tempo real</div><div class="benef-text">Riscos identificados e comunicados em milissegundos, antes de se tornarem emergências.</div></div></div>
+      <div class="benef-item"><span class="benef-icon">🔒</span><div><div class="benef-title">Spacie ética e controlada</div><div class="benef-text">O astronauta define todas as permissões. A Spacie atua como suporte, nunca como controle absoluto.</div></div></div>
+      <div class="benef-item"><span class="benef-icon">🧬</span><div><div class="benef-title">Monitoramento completo</div><div class="benef-text">8+ sinais vitais monitorados simultaneamente com análise preditiva integrada.</div></div></div>
+      <div class="benef-item"><span class="benef-icon">🌍</span><div><div class="benef-title">Aplicação versátil</div><div class="benef-text">Uma mesma tecnologia que protege tanto no espaço quanto em ambientes de risco na Terra.</div></div></div>
+      <div class="benef-item"><span class="benef-icon">📊</span><div><div class="benef-title">Relatórios automáticos</div><div class="benef-text">Após cada missão, relatório completo de dados biométricos e alertas enviado à base.</div></div></div>
+      <div class="benef-item"><span class="benef-icon">🆘</span><div><div class="benef-title">Emergência autônoma</div><div class="benef-text">Se não houver resposta a alertas, a Spacie aciona SOS, GPS e notificação à base automaticamente.</div></div></div>
     </div>
   </div>
 </section>
 
 <span class="sep"></span>
 
+<!-- S6 APLICAÇÃO -->
 <section id="aplicacao">
   <div class="aplicacao-inner">
-    <div class="aplicacao-header reveal">
+    <div class="aplicacao-header">
       <p class="section-label">06 — Aplicação</p>
       <h2 class="section-title">Como o OverSpace<br/>funciona na missão</h2>
       <p class="section-body">Da ativação ao encerramento, o OverSpace opera em três fases guiadas pela Spacie — garantindo proteção total em cada etapa da missão espacial.</p>
     </div>
 
     <div class="timeline">
-      <div class="tl-phase reveal">
+      <div class="tl-phase">
         <div class="tl-dot">F1</div>
         <div class="tl-label">Inicialização</div>
         <div class="tl-desc">Ativação, calibração e configuração das permissões da Spacie</div>
       </div>
-      <div class="tl-phase reveal">
+      <div class="tl-phase">
         <div class="tl-dot">F2</div>
         <div class="tl-label">Missão Ativa</div>
         <div class="tl-desc">Monitoramento contínuo, análise preditiva e resposta a riscos</div>
       </div>
-      <div class="tl-phase reveal">
+      <div class="tl-phase">
         <div class="tl-dot">F3</div>
         <div class="tl-label">Encerramento</div>
         <div class="tl-desc">Retorno à base, geração e envio de relatório completo</div>
       </div>
     </div>
 
-
     <div class="steps-grid">
-      <div class="step-card reveal">
+      <div class="step-card">
         <div class="step-num">01</div>
         <div>
           <div class="step-title">Vestir e ativar o OverSpace</div>
@@ -184,7 +185,7 @@
           <div class="step-tags"><span class="step-tag">FASE 1</span><span class="step-tag">HARDWARE</span></div>
         </div>
       </div>
-      <div class="step-card reveal">
+      <div class="step-card">
         <div class="step-num">02</div>
         <div>
           <div class="step-title">Configurar permissões da Spacie</div>
@@ -192,7 +193,7 @@
           <div class="step-tags"><span class="step-tag">FASE 1</span><span class="step-tag">PRIVACIDADE</span></div>
         </div>
       </div>
-      <div class="step-card reveal">
+      <div class="step-card">
         <div class="step-num">03</div>
         <div>
           <div class="step-title">Monitoramento biométrico e ambiental</div>
@@ -200,7 +201,7 @@
           <div class="step-tags"><span class="step-tag">FASE 2</span><span class="step-tag">SPACIE</span><span class="step-tag">TEMPO REAL</span></div>
         </div>
       </div>
-      <div class="step-card reveal">
+      <div class="step-card">
         <div class="step-num">04</div>
         <div>
           <div class="step-title">Análise preditiva e alertas</div>
@@ -208,7 +209,7 @@
           <div class="step-tags"><span class="step-tag">FASE 2</span><span class="step-tag">IA PREDITIVA</span><span class="step-tag">SOS</span></div>
         </div>
       </div>
-      <div class="step-card reveal">
+      <div class="step-card">
         <div class="step-num">05</div>
         <div>
           <div class="step-title">HUD: painel de sobrevivência</div>
@@ -216,7 +217,7 @@
           <div class="step-tags"><span class="step-tag">FASE 2</span><span class="step-tag">AR</span><span class="step-tag">HUD</span></div>
         </div>
       </div>
-      <div class="step-card reveal">
+      <div class="step-card">
         <div class="step-num">06</div>
         <div>
           <div class="step-title">Encerramento e relatório</div>
@@ -230,124 +231,54 @@
 
 <span class="sep"></span>
 
-
-<section id="slideshow-section">
+<!-- GALERIA — IMAGENS GIRANDO -->
+<section id="galeria">
   <div style="max-width:1100px;margin:0 auto;">
-    <div class="reveal">
+    <div>
       <p class="section-label">OverSpace em ação</p>
       <h2 class="section-title">A missão em<br/>imagens</h2>
+      <p class="section-body">Três cenários reais onde o OverSpace e a Spacie fazem a diferença entre a sobrevivência e o fracasso da missão.</p>
     </div>
-    <div class="slideshow-wrap reveal">
-      <div class="slide active">
-        <div class="slide-visual slide-bg1">🧑‍🚀</div>
-        <div class="slide-caption">
-          <h3>Missão em Marte</h3>
-          <p>O OverSpace protege o astronauta durante exploração da superfície marciana, com monitoramento de radiação solar, temperatura de −60°C e terreno irregular em tempo real.</p>
+
+    <div class="galeria-grid">
+
+      <div class="galeria-item">
+        <div class="galeria-orbit">
+          <img src="img1.png" alt="Nebulosa — ambiente espacial profundo" class="galeria-img"/>
+        </div>
+        <div class="galeria-label">
+          <h3>Espaço Profundo</h3>
+          <p>Nebulosas e campos de radiação intensa exigem monitoramento contínuo da Spacie para proteger o astronauta em missões além da órbita terrestre.</p>
         </div>
       </div>
-      <div class="slide">
-        <div class="slide-visual slide-bg2">🚀</div>
-        <div class="slide-caption">
+
+      <div class="galeria-item">
+        <div class="galeria-orbit galeria-orbit--rev">
+          <img src="img2.png" alt="Terra vista do espaço" class="galeria-img"/>
+        </div>
+        <div class="galeria-label">
           <h3>Órbita Terrestre</h3>
-          <p>Durante atividades extraveiculares na ISS, a Spacie monitora continuamente a pressão do traje, O₂ residual e coordena comunicação com a base em caso de emergência.</p>
+          <p>Durante atividades extraveiculares na ISS, a Spacie monitora pressão do traje, O₂ residual e garante comunicação constante com a base de controle.</p>
         </div>
       </div>
-      <div class="slide">
-        <div class="slide-visual slide-bg3">🌕</div>
-        <div class="slide-caption">
-          <h3>Base Lunar</h3>
-          <p>Na superfície da Lua, o HUD do OverSpace exibe mapa do terreno, direção da base e alertas de micrometeoritos — garantindo a segurança do astronauta a cada passo.</p>
+
+      <div class="galeria-item">
+        <div class="galeria-orbit">
+          <img src="img3.png" alt="Lançamento de foguete" class="galeria-img"/>
+        </div>
+        <div class="galeria-label">
+          <h3>Lançamento</h3>
+          <p>Nos momentos críticos de lançamento, o OverSpace monitora sinais vitais sob alta pressão gravitacional e está pronto para acionar protocolos de emergência em milissegundos.</p>
         </div>
       </div>
-      <div class="slide-controls">
-        <button class="slide-btn" id="slide-prev">← ANTERIOR</button>
-        <div class="slide-dots">
-          <span class="slide-dot active" data-index="0"></span>
-          <span class="slide-dot" data-index="1"></span>
-          <span class="slide-dot" data-index="2"></span>
-        </div>
-        <button class="slide-btn" id="slide-next">PRÓXIMO →</button>
-      </div>
+
     </div>
   </div>
 </section>
 
 <span class="sep"></span>
 
-<section id="contato">
-  <div class="form-inner">
-    <div class="reveal">
-      <p class="section-label">Contato</p>
-      <h2 class="section-title">Fale com a<br/>equipe SentinelX</h2>
-      <p class="section-body">Tem interesse no OverSpace? Entre em contato com a equipe.</p>
-    </div>
-    <form id="contact-form" novalidate>
-      <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label" for="f-nome">Nome *</label>
-          <input class="form-input" id="f-nome" type="text" placeholder="Seu nome completo"/>
-          <span class="form-error" id="err-nome">Por favor, informe seu nome.</span>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="f-email">E-mail *</label>
-          <input class="form-input" id="f-email" type="email" placeholder="seu@email.com"/>
-          <span class="form-error" id="err-email">Informe um e-mail válido.</span>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="f-org">Organização *</label>
-          <input class="form-input" id="f-org" type="text" placeholder="Agência / Empresa"/>
-          <span class="form-error" id="err-org">Informe sua organização.</span>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="f-interesse">Interesse *</label>
-          <select class="form-select" id="f-interesse">
-            <option value="">Selecione...</option>
-            <option value="missao">Missão espacial</option>
-            <option value="pesquisa">Pesquisa & Desenvolvimento</option>
-            <option value="parceria">Parceria comercial</option>
-            <option value="imprensa">Imprensa</option>
-          </select>
-          <span class="form-error" id="err-interesse">Selecione uma opção.</span>
-        </div>
-        <div class="form-group full">
-          <label class="form-label" for="f-msg">Mensagem *</label>
-          <textarea class="form-textarea" id="f-msg" placeholder="Descreva sua mensagem..."></textarea>
-          <span class="form-error" id="err-msg">Por favor, escreva sua mensagem.</span>
-        </div>
-      </div>
-      <button type="submit" class="form-submit">ENVIAR MENSAGEM</button>
-      <div class="form-success" id="form-success">✓ MENSAGEM ENVIADA COM SUCESSO!</div>
-    </form>
-  </div>
-</section>
-
-<span class="sep"></span>
-
-<section id="quiz">
-  <div class="quiz-inner">
-    <div class="reveal">
-      <p class="section-label">Quiz</p>
-      <h2 class="section-title">Quanto você sabe<br/>sobre o OverSpace?</h2>
-      <p class="section-body">Teste seus conhecimentos sobre tecnologia espacial e o projeto SentinelX.</p>
-    </div>
-    <div class="quiz-box reveal">
-      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress" style="width:10%"></div></div>
-      <div id="quiz-content">
-        <div class="quiz-counter" id="quiz-counter">PERGUNTA 1 DE 10</div>
-        <div class="quiz-question" id="quiz-question"></div>
-        <div class="quiz-options" id="quiz-options"></div>
-        <div class="quiz-feedback" id="quiz-feedback"></div>
-        <div class="quiz-nav"><button class="quiz-btn" id="quiz-next">PRÓXIMA →</button></div>
-      </div>
-      <div class="quiz-result" id="quiz-result">
-        <div class="quiz-result-score" id="quiz-score"></div>
-        <div class="quiz-result-label" id="quiz-label"></div>
-        <button class="quiz-restart" id="quiz-restart">↩ TENTAR NOVAMENTE</button>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- RODAPÉ -->
 <footer>
   <div class="footer-top">
     <div>
@@ -357,11 +288,11 @@
     <div class="footer-team">
       <h4>Equipe do Projeto</h4>
       <ul class="team-list">
-        <li>Kauê     <span class="rm">RM570699</span></li>
-        <li>Messias  <span class="rm">RM573247</span></li>
-        <li>Lucca    <span class="rm">RM571044</span></li>
-        <li>Fabricio <span class="rm">RM572631</span></li>
-        <li>João     <span class="rm">RM571827</span></li>
+        <li>Kauê Herculano     <span class="rm">RM570699</span></li>
+        <li>Messias Macedo     <span class="rm">RM573247</span></li>
+        <li>Lucca Braga        <span class="rm">RM571044</span></li>
+        <li>Fabrício Zanzzarine<span class="rm">RM572631</span></li>
+        <li>João Cruz          <span class="rm">RM571827</span></li>
       </ul>
     </div>
   </div>
