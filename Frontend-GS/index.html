@@ -226,7 +226,7 @@
 
 <span class="sep"></span>
 
-<!-- GALERIA — IMAGENS GIRANDO -->
+<!-- GALERIA — SLIDESHOW -->
 <section id="galeria">
   <div style="max-width:1100px;margin:0 auto;">
     <div>
@@ -235,44 +235,43 @@
       <p class="section-body">Três cenários reais onde o OverSpace e a Spacie fazem a diferença entre a sobrevivência e o fracasso da missão.</p>
     </div>
 
-    <div class="galeria-grid">
+    <div class="slideshow-wrapper">
+      <div class="slideshow-container">
 
-      <div class="galeria-item">
-        <div class="galeria-orbit">
-          <div class="galeria-clip">
-            <img src="espaço1.jpg" alt="Campo de galáxias profundo" class="galeria-img"/>
+        <div class="slide active">
+          <img src="espaço1.jpg" alt="Espaço Profundo"/>
+          <div class="slide-caption">
+            <h3>Espaço Profundo</h3>
+            <p>Nebulosas e campos de radiação intensa exigem monitoramento contínuo da Spacie para proteger o astronauta em missões além da órbita terrestre.</p>
           </div>
         </div>
-        <div class="galeria-label">
-          <h3>Espaço Profundo</h3>
-          <p>Nebulosas e campos de radiação intensa exigem monitoramento contínuo da Spacie para proteger o astronauta em missões além da órbita terrestre.</p>
-        </div>
-      </div>
 
-      <div class="galeria-item">
-        <div class="galeria-orbit galeria-orbit--rev">
-          <div class="galeria-clip">
-            <img src="espaço2.jpg" alt="Via Láctea" class="galeria-img"/>
+        <div class="slide">
+          <img src="espaço2.jpg" alt="Via Láctea"/>
+          <div class="slide-caption">
+            <h3>Órbita Terrestre</h3>
+            <p>Durante atividades extraveiculares na ISS, a Spacie monitora pressão do traje, O₂ residual e garante comunicação constante com a base de controle.</p>
           </div>
         </div>
-        <div class="galeria-label">
-          <h3>Órbita Terrestre</h3>
-          <p>Durante atividades extraveiculares na ISS, a Spacie monitora pressão do traje, O₂ residual e garante comunicação constante com a base de controle.</p>
-        </div>
-      </div>
 
-      <div class="galeria-item">
-        <div class="galeria-orbit">
-          <div class="galeria-clip">
-            <img src="espaço3.jpg" alt="Lançamento de foguete" class="galeria-img"/>
+        <div class="slide">
+          <img src="espaço3.jpg" alt="Lançamento"/>
+          <div class="slide-caption">
+            <h3>Lançamento</h3>
+            <p>Nos momentos críticos de lançamento, o OverSpace monitora sinais vitais sob alta pressão gravitacional e está pronto para acionar protocolos de emergência em milissegundos.</p>
           </div>
         </div>
-        <div class="galeria-label">
-          <h3>Lançamento</h3>
-          <p>Nos momentos críticos de lançamento, o OverSpace monitora sinais vitais sob alta pressão gravitacional e está pronto para acionar protocolos de emergência em milissegundos.</p>
-        </div>
+
       </div>
 
+      <button class="slide-btn slide-prev" onclick="moverSlide(-1)">&#8592;</button>
+      <button class="slide-btn slide-next" onclick="moverSlide(1)">&#8594;</button>
+
+      <div class="slide-dots">
+        <span class="dot active" onclick="irParaSlide(0)"></span>
+        <span class="dot" onclick="irParaSlide(1)"></span>
+        <span class="dot" onclick="irParaSlide(2)"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -303,5 +302,23 @@
   </div>
 </footer>
 
+<script>
+  let slideAtual = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function mostrarSlide(n) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slideAtual = (n + slides.length) % slides.length;
+    slides[slideAtual].classList.add('active');
+    dots[slideAtual].classList.add('active');
+  }
+
+  function moverSlide(direcao) { mostrarSlide(slideAtual + direcao); }
+  function irParaSlide(n) { mostrarSlide(n); }
+
+  setInterval(() => moverSlide(1), 4500);
+</script>
 </body>
 </html>
